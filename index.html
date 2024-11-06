@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the little things in life</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Elemen penghias samping */
+        .side-decor-left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background-color: #4CAF50;
+            z-index: -1;
+        }
+        .side-decor-right {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background-color: #FF5733;
+            z-index: -1;
+        }
+
+        /* Gaya konten utama */
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Pengaturan tanggal dan waktu */
+        #dateTime {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Mode gelap */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Gaya animasi */
+        .animate {
+            transition: transform 0.5s;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Elemen Penghias Samping -->
+    <div class="side-decor-left"></div>
+    <div class="side-decor-right"></div>
+
+    <!-- Konten Utama -->
+    <div class="content">
+        <!-- Teks Utama -->
+        <h1>aarip erlangga</h1>
+        <p>a place to throw away memories</p>
+
+        <!-- Tanggal dan Waktu -->
+        <div id="dateTime">Loading...</div>
+
+        <!-- Tautan Gambar -->
+        <a href="https://open.spotify.com/user/31uuxmsyfznfuow37sxntwjwagea?si=b86f1cbc74e14bcc" target="_blank">
+            <img src="https://developer.spotify.com/images/guidelines/design/icon3.svg" alt="Logo Spotify" class="gambar-digeser" width="50">
+        </a>
+        <a href="https://wa.me/qr/GCQOW5EOP6NQA1" target="_blank">
+            <img src="https://seeklogo.com/images/W/whatsapp-logo-0DBD89C8E2-seeklogo.com.png" alt="Logo WhatsApp" class="gambar-digeser" width="50">
+        </a>
+
+        <!-- Gambar Inspiratif -->
+        <img src="https://comicbook.com/wp-content/uploads/sites/4/2024/09/f53ca0b3-9886-4514-92ba-fdf4b35b231c.jpg?resize=1024,576" alt="Gambar Inspiratif" width="800">
+
+        <!-- Carousel -->
+        <div class="carousel">
+            <div class="slides">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKdmNd3RmPL_9u83hXZ-fxJf3VUJ0mhAEofA&s" alt="Gambar 1" width="500">
+                <img src="https://cdn.idntimes.com/content-images/duniaku/post/20230117/pain-tendo-812ffaedd3d3cf01f6a461f3c9ddffab.jpg" alt="Gambar 3" width="800">
+            </div>
+        </div>
+
+            </div>
+
+    <!-- Script untuk tema gelap, animasi gambar, validasi form, dan tanggal/waktu -->
+    <script>
+        // Fungsi untuk mengaktifkan dan menonaktifkan tema gelap
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const darkModeButton = document.getElementById('darkModeButton');
+            darkModeButton.textContent = document.body.classList.contains('dark-mode') ? 'Nonaktifkan Tema Gelap' : 'Aktifkan Tema Gelap';
+        }
+
+        // Fungsi untuk memvalidasi formulir
+        function validasiForm() {
+            const nama = document.getElementById('nama').value;
+            const pesan = document.getElementById('pesan').value;
+
+            if (nama === '' || pesan === '') {
+                alert('Harap isi semua kolom!');
+                return false;
+            }
+            alert('Formulir berhasil dikirim!');
+            return true;
+        }
+
+        // Fungsi untuk menampilkan tanggal dan waktu dengan format rapi
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById("dateTime");
+            const now = new Date();
+
+            // Nama hari dan bulan dalam bahasa Inggris
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const day = days[now.getDay()];
+            const month = months[now.getMonth()];
+
+            // Ambil tanggal, tahun, jam, menit, dan detik
+            const date = now.getDate();
+            const year = now.getFullYear();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            // Gabungkan format hari, tanggal, bulan, tahun, dan waktu
+            const formattedDate = `${day}, ${date} ${month} ${year}`;
+            const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+            // Tampilkan di elemen dateTime
+            dateTimeElement.innerHTML = `${formattedDate} - ${formattedTime}`;
+        }
+
+        // Panggil fungsi pertama kali dan perbarui setiap detik
+        setInterval(updateDateTime, 1000);
+    </script>                                                                                                                   <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website dengan Efek Parallax Estetik</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Elemen parallax dengan gradient dan shadow */
+        .side-parallax-left, .side-parallax-right {
+            position: fixed;
+            top: 0;
+            width: 50px;
+            height: 100vh;
+            z-index: -1;
+            animation: fadeIn 2s ease-in-out;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(76, 175, 80, 0.7);
+        }
+
+        .side-parallax-left {
+            left: 0;
+            background: linear-gradient(to bottom, rgba(76, 175, 80, 0.8), rgba(0, 128, 0, 0.5));
+        }
+
+        .side-parallax-right {
+            right: 0;
+            background: linear-gradient(to bottom, rgba(255, 87, 51, 0.8), rgba(128, 0, 0, 0.5));
+        }
+
+        /* Efek fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Konten utama */
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Elemen Samping -->
+    <div class="side-parallax-left"></div>
+    <div class="side-parallax-right"></div>
+
+    <!-- Konten Utama -->
+    <div class="content">
+        <h1>TERIMA KASIH SUDAH BERKUNJUNG SALAM KONTOL</h1>
+   
+
+    <!-- JavaScript untuk Efek Parallax 3D -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const parallaxLeft = document.querySelector('.side-parallax-left');
+            const parallaxRight = document.querySelector('.side-parallax-right');
+
+            // Parallax dan efek 3D dengan transform
+            const scaleValue = 1 + scrollPosition * 0.0002;
+            parallaxLeft.style.transform = `translateY(${scrollPosition * 0.5}px) scale(${scaleValue})`;
+            parallaxRight.style.transform = `translateY(${scrollPosition * -0.5}px) scale(${scaleValue})`;
+        });
+    </script>
+</body>
+</html>
+
+</body>
+</html>

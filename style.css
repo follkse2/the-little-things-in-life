@@ -1,0 +1,142 @@
+/* Memberi latar belakang dengan warna gradasi */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Menggunakan 'Roboto' dan font fallback */
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0); /* Latar belakang gradasi */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transisi untuk tema */
+}
+
+/* Mengatur gaya untuk judul utama dengan animasi */
+h1 {
+    color: #007bff;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 1px 1px 2px #000000; /* Bayangan pada teks */
+    animation: fadeIn 2s ease-in-out; /* Animasi */
+}
+
+/* Animasi Muncul Perlahan pada Judul */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mengatur gaya untuk subjudul */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Mengatur gaya daftar poin-poin */
+ul {
+    list-style-type: circle;
+    text-align: center;
+    padding: 0;
+}
+
+ul li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Efek hover pada daftar poin-poin */
+ul li:hover {
+    color: #007bff; /* Mengubah warna teks menjadi biru saat dihover */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, font-weight 0.3s ease; /* Transisi halus */
+}
+
+/* Menata gambar agar tampil di tengah dan memberi efek */
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan pada gambar */
+    transition: transform 0.3s ease; /* Menambahkan transisi untuk efek hover */
+    cursor: pointer; /* Menunjukkan gambar dapat diklik */
+}
+
+/* Efek hover pada gambar */
+img:hover {
+    transform: scale(1.05); /* Memperbesar gambar sedikit */
+}
+
+/* Animasi untuk gerakan gambar */
+@keyframes moveImage {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Kelas untuk mengaktifkan animasi saat diklik */
+.animate {
+    animation: moveImage 0.5s ease-in-out;
+}
+
+/* Gaya untuk paragraf */
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Gaya dasar untuk tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Gaya untuk teks tooltip */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Letak tooltip di atas tombol */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip terlihat saat kursor diarahkan ke elemen
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Logo Kecil</title>
+   <style>
+      .small-logo {
+         width: 30px; /* Atur ukuran sesuai kebutuhan */
+         height: auto;
+      }
+   </style>
+</head>
+<body>
+   <!-- Tambahkan logo kecil -->
+   <img src="https://w7.pngwing.com/pngs/429/946/png-transparent-spotify-streaming-media-podcast-music-playlist-spotify-logo-logo-musician-music-download-thumbnail.png" alt="Logo" class="small-logo">
+</body>
+</html>
